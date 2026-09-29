@@ -4,10 +4,10 @@ import pandas as pd
 def get_connection():
     return psycopg2.connect(dbname="postgres", user="juhoon")
 
-def save_reading(cursor, equipment_id, temperature, status):
+def save_reading(cursor, equipment_id, temperature, vibration, status):
     cursor.execute(
-        "INSERT INTO readings (equipment_id, temperature, status) VALUES (%s, %s, %s)",
-        (equipment_id, temperature, status)
+        "INSERT INTO readings (equipment_id, temperature, vibration, status) VALUES (%s, %s, %s, %s)",
+        (equipment_id, temperature, vibration, status)
     )
 
 def get_all_readings(conn):
