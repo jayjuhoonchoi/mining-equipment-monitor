@@ -45,7 +45,7 @@ mining with IT, data and industrial technology skills.
 ## Roadmap
 
 - [x] Sensor simulation, PostgreSQL storage, analysis
-- [ ] Equipment IDs, vibration / pressure / RPM readings
+- [x] Equipment IDs, vibration readings, per-metric classification
 - [ ] REST API (FastAPI)
 - [ ] Docker Compose
 - [ ] Tests and CI (GitHub Actions)
