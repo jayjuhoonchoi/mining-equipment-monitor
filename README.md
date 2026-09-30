@@ -55,3 +55,25 @@ mining with IT, data and industrial technology skills.
 
 
 ![tests](https://github.com/jayjuhoonchoi/mining-equipment-monitor/actions/workflows/test.yml/badge.svg)
+
+
+
+
+## Industrial context
+
+This project simulates a small slice of a mining site's monitoring stack.
+
+- **PLC** (Programmable Logic Controller): a small industrial computer next
+  to the equipment that makes immediate decisions (e.g. shut down if
+  temperature exceeds a limit). `check_temperature()` mirrors this logic
+  in software.
+- **SCADA**: software that gathers data from many PLCs into one view.
+  `main.py` and `analysis.py` play this role here.
+- **HMI** (Human-Machine Interface): the screen operators look at.
+  The `/readings` API endpoint is a first step toward one.
+- **Modbus TCP / OPC UA**: real industrial communication protocols
+  between PLCs and SCADA systems. This project uses **MQTT** instead,
+  which is the modern, IT-friendly equivalent increasingly used in
+  smart-factory setups.
+- **Historian**: a database that stores equipment history over time.
+  PostgreSQL plays that role here.
