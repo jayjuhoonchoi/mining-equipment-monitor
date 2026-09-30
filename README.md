@@ -46,10 +46,10 @@ mining with IT, data and industrial technology skills.
 
 - [x] Sensor simulation, PostgreSQL storage, analysis
 - [x] Equipment IDs, vibration readings, per-metric classification
-- [ ] REST API (FastAPI)
-- [ ] Docker Compose
-- [ ] Tests and CI (GitHub Actions)
-- [ ] MQTT telemetry
+- [x] REST API (FastAPI)
+- [x] Docker Compose
+- [x] Tests and CI (GitHub Actions)
+- [x] MQTT telemetry
 - [ ] Industrial architecture notes (PLC, SCADA, Modbus, OPC UA)
 - [ ] AWS deployment with Terraform
 
