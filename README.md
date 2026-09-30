@@ -52,3 +52,6 @@ mining with IT, data and industrial technology skills.
 - [ ] MQTT telemetry
 - [ ] Industrial architecture notes (PLC, SCADA, Modbus, OPC UA)
 - [ ] AWS deployment with Terraform
+
+
+![tests](https://github.com/jayjuhoonchoi/mining-equipment-monitor/actions/workflows/test.yml/badge.svg)
