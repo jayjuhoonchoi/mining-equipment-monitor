@@ -77,3 +77,18 @@ This project simulates a small slice of a mining site's monitoring stack.
   smart-factory setups.
 - **Historian**: a database that stores equipment history over time.
   PostgreSQL plays that role here.
+
+
+  ## Infrastructure as Code
+
+`main.tf` defines an S3 bucket using Terraform. It was tested against
+[LocalStack](https://localstack.cloud) (free Hobby tier) to avoid any
+AWS costs during development:
+
+    terraform init
+    terraform plan
+    terraform apply
+
+To deploy against real AWS, remove the `endpoints` block and the
+`skip_*` flags from the provider configuration, and configure real
+AWS credentials.
