@@ -92,3 +92,29 @@ AWS costs during development:
 To deploy against real AWS, remove the `endpoints` block and the
 `skip_*` flags from the provider configuration, and configure real
 AWS credentials.
+
+
+## Industrial context
+
+This project simulates a small slice of a mining site's monitoring stack.
+
+- **PLC** (Programmable Logic Controller): a small industrial computer
+  attached to one piece of equipment. It checks the device's status and
+  makes immediate decisions on its own (e.g. shut down if temperature
+  exceeds a limit), and it works without needing internet.
+  `check_temperature()` mirrors this logic in software.
+- **SCADA**: a system that collects data from many PLCs across a site
+  and displays it all in one place, so operators can monitor everything
+  from a single view. `main.py` and `analysis.py` play this role here.
+- **HMI** (Human-Machine Interface): the screen that shows SCADA's data
+  to people. The `/readings` API endpoint is a first step toward one.
+- **Modbus TCP**: an old, simple industrial protocol that sends plain
+  numbers identified by address, with no field names.
+- **OPC UA**: a newer industrial protocol that sends structured,
+  named data (similar in spirit to JSON).
+- This project uses **MQTT** with a simple comma-separated payload
+  (`equipment_id,temperature,vibration`) rather than Modbus or OPC UA.
+  It's not a real industrial protocol, but MQTT itself is the modern,
+  IT-friendly equivalent increasingly used in smart-factory setups.
+- **Historian**: a database that stores equipment history over time.
+  PostgreSQL plays that role here.
