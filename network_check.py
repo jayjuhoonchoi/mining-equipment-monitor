@@ -17,10 +17,11 @@ for ip in devices:
     print(ip, "-", status)
     results.append({"ip": ip, "status": status})
 
-with open("network_report.csv", "w") as file:
-    writer = csv.DictWriter(file, fieldnames=["ip", "status"])
-    writer.writeheader()
-    for row in results:
-        writer.writerow(row)
+def save_report(results, filename):
+    with open(filename, "w") as file:
+        writer = csv.DictWriter(file, fieldnames=["ip", "status"])
+        writer.writeheader()
+        for row in results:
+            writer.writerow(row)
 
 print("Saved to network_report.csv")
