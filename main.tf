@@ -16,3 +16,7 @@ provider "aws" {
 resource "aws_s3_bucket" "equipment_data" {
   bucket = "mining-equipment-monitor-data-tf"
 }
+
+resource "aws_s3_bucket" "equipment_logs" {
+  bucket = "mining-equipment-monitor-logs"
+}
