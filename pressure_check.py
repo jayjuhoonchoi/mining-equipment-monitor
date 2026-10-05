@@ -9,3 +9,14 @@ def generate_pressures():
 
 pressures = generate_pressures()
 print(pressures)
+
+def check_pressure(pressures):
+    if pressures > 100:
+        return "Warning"
+    else:
+        return "OK"
+
+for p in pressures:
+    status = check_pressure(p)
+    print(p, "-", status)
+
