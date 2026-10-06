@@ -25,23 +25,15 @@ temperatures = generate_temperature()
 print(temperatures)
 
 results = []
-
-for t in temperatures:
-    status = check_temperature(t)
-    print(t, "-", status)
-    results.append({"temperature": t, "status": status})
-
-save_report(results, "temperature_report.csv")
-print("Saved to temperature_report.csv")
-
-results = []
-OK_count = 0
+ok_count = 0
 
 for t in temperatures:
     status = check_temperature(t)
     print(t, "-", status)
     results.append({"temperature": t, "status": status})
     if status == "OK":
-        OK_count = OK_count + 1
+        ok_count = ok_count + 1
 
-print("number of safe temperatures:", OK_count)
+save_report(results, "temperature_report.csv")
+print("Saved to temperature_report.csv")
+print("number of OK temperatures:", ok_count)
