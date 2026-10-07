@@ -88,3 +88,14 @@ To deploy against real AWS: remove the `endpoints` block and `skip_*` flags from
 - [x] Industrial architecture notes (PLC, SCADA, Modbus, OPC UA)
 - [x] Infrastructure as code (Terraform, tested via LocalStack)
 - [ ] AWS deployment with real infrastructure
+
+
+## PLC Ladder Logic (Learning Log)
+
+Practiced PLC ladder logic fundamentals using [PLCFiddle](https://www.plcfiddle.com/) (Code School track):
+
+- NO/NC contact behavior and fail-safe design (NC for Stop/alarm circuits)
+- Self-holding (seal-in) circuits
+- AND + OR combined logic
+
+**Saved fiddle:** [AND+OR combined logic exercise](https://www.plcfiddle.com/fiddles?v=2&d=eJyVkDFvwjAQhf9K9eYb7IQ4wXsHJqQOXSIPhrgUKXFQcBAV8n-vzlEhaoaWxfKdvnf37t1wscPR7lp3hr5BZvxebDs66A_bnh0hfJ0cNHZ934LgbcfVxp_G8CIRCTJ_SpMljfqnZjuGx6LyOVGGGAnD6A_TbdB1QRUpQ1hB12uSmSEU0LWUhqD4IwxBCiEEdG0iwbWucz6kAcW0fopr00BzXHcL1-OeTaolpB5QHxxD1RLKF5PWDP3cN1i__wShtU3jhnSJYn9SzCgW0sIhU_IPKk9UNqPY6W-qTIHeLUhaGULngmWdd9fwOqXFtMwptd5nE2Q19d5Gf-C6jPEbjD7A_w)
