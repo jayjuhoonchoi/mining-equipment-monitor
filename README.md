@@ -99,3 +99,5 @@ Practiced PLC ladder logic fundamentals using [PLCFiddle](https://www.plcfiddle.
 - AND + OR combined logic
 
 **Saved fiddle:** [AND+OR combined logic exercise](https://www.plcfiddle.com/fiddles?v=2&d=eJyVkDFvwjAQhf9K9eYb7IQ4wXsHJqQOXSIPhrgUKXFQcBAV8n-vzlEhaoaWxfKdvnf37t1wscPR7lp3hr5BZvxebDs66A_bnh0hfJ0cNHZ934LgbcfVxp_G8CIRCTJ_SpMljfqnZjuGx6LyOVGGGAnD6A_TbdB1QRUpQ1hB12uSmSEU0LWUhqD4IwxBCiEEdG0iwbWucz6kAcW0fopr00BzXHcL1-OeTaolpB5QHxxD1RLKF5PWDP3cN1i__wShtU3jhnSJYn9SzCgW0sIhU_IPKk9UNqPY6W-qTIHeLUhaGULngmWdd9fwOqXFtMwptd5nE2Q19d5Gf-C6jPEbjD7A_w)
+
+> PLC logic is the source of truth for OT data — a logic error (e.g. a stuck alarm latch, or a Stop contact wired NO instead of NC) can make SCADA/DB readings look normal while the real equipment state is wrong, which is why OT security and anomaly detection can't fully trust the data layer alone.
