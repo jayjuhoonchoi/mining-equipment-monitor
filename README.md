@@ -87,7 +87,7 @@ To deploy against real AWS: remove the `endpoints` block and `skip_*` flags from
 - [x] MQTT telemetry
 - [x] Industrial architecture notes (PLC, SCADA, Modbus, OPC UA)
 - [x] Infrastructure as code (Terraform, tested via LocalStack)
-- [ ] AWS deployment with real infrastructure
+- [x] AWS deployment with real infrastructure
 
 
 ## PLC Ladder Logic (Learning Log)
@@ -101,3 +101,12 @@ Practiced PLC ladder logic fundamentals using [PLCFiddle](https://www.plcfiddle.
 **Saved fiddle:** [AND+OR combined logic exercise](https://www.plcfiddle.com/fiddles?v=2&d=eJyVkDFvwjAQhf9K9eYb7IQ4wXsHJqQOXSIPhrgUKXFQcBAV8n-vzlEhaoaWxfKdvnf37t1wscPR7lp3hr5BZvxebDs66A_bnh0hfJ0cNHZ934LgbcfVxp_G8CIRCTJ_SpMljfqnZjuGx6LyOVGGGAnD6A_TbdB1QRUpQ1hB12uSmSEU0LWUhqD4IwxBCiEEdG0iwbWucz6kAcW0fopr00BzXHcL1-OeTaolpB5QHxxD1RLKF5PWDP3cN1i__wShtU3jhnSJYn9SzCgW0sIhU_IPKk9UNqPY6W-qTIHeLUhaGULngmWdd9fwOqXFtMwptd5nE2Q19d5Gf-C6jPEbjD7A_w)
 
 > PLC logic is the source of truth for OT data — a logic error (e.g. a stuck alarm latch, or a Stop contact wired NO instead of NC) can make SCADA/DB readings look normal while the real equipment state is wrong, which is why OT security and anomaly detection can't fully trust the data layer alone.
+
+## Database Safety & Design Practice
+
+Practiced common DB pitfalls (from a developer-mistakes discussion) hands-on against a copy of production data:
+- `DELETE ... WHERE` vs `TRUNCATE` (TRUNCATE rejects WHERE — whole-table only)
+- Always test destructive queries on a copy, never the real table
+- Split flat equipment metadata into a separate `equipment` table, joined via `equipment_id` — avoids duplicating site/plant text across every reading
+
+See [`sql_practice/db_safety_and_hierarchy.sql`](sql_practice/db_safety_and_hierarchy.sql)
