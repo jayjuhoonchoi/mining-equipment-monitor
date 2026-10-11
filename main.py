@@ -8,7 +8,12 @@ setup_logging()
 
 logging.info("Starting sensor check")
 
-conn = get_connection()
+try:
+    conn = get_connection()
+except Exception as e:
+    logging.error(f"Failed to connect to database: {e}")
+    raise
+
 cursor = conn.cursor()
 
 readings = generate_readings()
