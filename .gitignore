@@ -2,4 +2,5 @@ __pycache__/
 .pytest_cache/
 .terraform/
 *.tfstate
-*.tfstate.backupapp.log
+*.tfstate.backup
+app.log
